@@ -1,0 +1,13 @@
+package basicweb;
+
+public class Firstclass  {
+
+	public static void main(String[] args)
+	{
+	  System.setProperty("webdriver.chrome.driver","C:\\Users\\Appwrk-22\\eclipse-workspace\\Start\\drivers\\chromedriver\\chromedriver.exe");
+	  Webdriver driver=new ChromeDriver();
+	 
+      
+	}
+
+}

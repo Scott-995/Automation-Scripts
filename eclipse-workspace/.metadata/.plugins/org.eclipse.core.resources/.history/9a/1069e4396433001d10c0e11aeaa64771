@@ -1,0 +1,25 @@
+package basicweb;
+import java.util.Scanner;
+public class test1 {
+
+public static void main(String[] args){
+		 char A ='D';
+
+//		Switch (week)
+//		{
+//
+//
+//
+//Case 0 :
+//System.out.println("Today is Monday");
+//Case 1:
+//System.out.println("Today is Tuesday");
+//Default:
+//System.out.println("You didnot find any of these match");
+//		}
+	}
+
+
+
+}
+

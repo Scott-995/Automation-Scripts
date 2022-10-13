@@ -1,0 +1,33 @@
+package android;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+
+public class startChrome {
+
+	public static   void capabilities()  throws MalformedURLException {
+
+
+
+	DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"Chrome");
+		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel22");
+		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
+		URL url =new URL("http://127.0.0.1:4723/wd/hub");
+		WebDriver driver = new AndroidDriver(url,capabilities);
+		driver.get("https://rahulshettyacademy.com/angularAppdemo/");
+		driver.findElement(By.cssSelector("navbar-toggler-icon"));
+		driver.findElement(By.cssSelector("a[herf*='products']")).click();
+		driver.quit();
+	}
+
+}

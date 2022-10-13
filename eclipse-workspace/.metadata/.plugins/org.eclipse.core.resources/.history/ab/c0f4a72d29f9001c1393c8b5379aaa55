@@ -1,0 +1,26 @@
+package android;
+
+import java.net.MalformedURLException;
+
+import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+
+public class startChrome {
+
+	public static   void capabilities()  throws MalformedURLException {
+		
+		
+		
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"Chrome");
+		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel22");
+		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
+		
+	
+	}
+
+}

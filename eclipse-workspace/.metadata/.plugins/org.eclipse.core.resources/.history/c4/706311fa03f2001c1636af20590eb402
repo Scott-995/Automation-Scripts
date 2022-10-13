@@ -1,0 +1,45 @@
+package basicweb;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class ErrorValidation {
+
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Appwrk-22\\eclipse-workspace\\Start\\drivers\\chromedriver\\chromedriver.exe");
+
+		WebDriver driver = new ChromeDriver(); 
+		driver.get("http://dev.appwrk.com");
+		driver.manage().window().maximize();
+		
+	WebElement titleValidation = driver.findElement(By.xpath("//*[@id=\"wpcf7-f426-o1\"]/form/div[2]/div/div[1]/div[1]/span/input"));
+	if (titleValidation.isDisplayed())
+	{
+		System.out.println("Title is Displayed");
+	}
+	else
+	{
+		System.out.println("Title is not Displayed");
+
+	}
+	String expectedText = "name";
+	String ActualText = titleValidation.getText();
+	if(ActualText.equals(expectedText))
+	{
+		System.out.println(" the actal and expected result are same"+ ActualText);
+	}
+		else
+		{
+			System.out.println(" the actal and expected result are  not same"+ ActualText);
+
+		}
+
+	}			
+	}
+
+

@@ -1,0 +1,28 @@
+ackage basicweb;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class GoogleSearchPageTest {
+    @SuppressWarnings("unused")
+	private	static WebDriver driver = null ;
+public static void main(String[] args) {
+	
+}
+
+@SuppressWarnings("unused")
+public static void GoogleSearchPageTest() {
+	System.setProperty("webdriver.chrome.driver","C:\\Users\\Appwrk-22\\eclipse-workspace\\Start\\drivers\\chromedriver\\chromedriver.exe");
+	ChromeDriver driver = new ChromeDriver();
+	
+	GoogleSeaarchPageObjects searchpageobj=new GoogleSeaarchPageObjects();
+	driver.get("https://google.com");
+	searchPageObj.setTextInSearchBox("A B C D");
+	searchPageObj.clickSearchButton();
+	driver.close();
+	
+	
+	
+	
+}
+}

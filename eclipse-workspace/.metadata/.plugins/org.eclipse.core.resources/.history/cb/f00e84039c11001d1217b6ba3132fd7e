@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class scanner {
+
+	public static void main(String[] args) {
+		
+ // Scanner ad = new Scanner(System.in);
+  System.out.println(ad + " sum this value ");
+		
+
+	}
+
+}

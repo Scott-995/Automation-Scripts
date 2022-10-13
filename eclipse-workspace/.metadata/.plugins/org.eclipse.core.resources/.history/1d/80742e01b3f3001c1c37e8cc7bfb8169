@@ -1,0 +1,31 @@
+package basicweb;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Basic1 {
+
+	        public static void main(String[] args) throws InterruptedException {
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Appwrk-22\\eclipse-workspace\\Start\\drivers\\chromedriver\\chromedriver.exe");
+
+			WebDriver driver =new ChromeDriver();
+			driver.get("https://dev.appwrk.com/contact-us");
+			
+
+			Thread.sleep(1000);
+            driver.findElement(By.name("Yourname")).sendKeys("scott");
+            driver.findElement(By.name("Phonenumber-cf7it-national")).sendKeys("9876543210");
+            driver.findElement(By.name("email")).sendKeys("qwerty@gmail.com");
+            driver.findElement(By.xpath("/contact-us#wpcf7-f426-o2")).sendKeys(Keys.RETURN);
+            
+            
+            
+            
+            
+			
+			
+	}
+
+}

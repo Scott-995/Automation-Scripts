@@ -1,0 +1,37 @@
+package android;
+
+
+
+	import java.net.MalformedURLException;
+	import java.net.URL;
+
+	import org.openqa.selenium.By;
+	import org.openqa.selenium.WebDriver;
+
+	import org.openqa.selenium.remote.DesiredCapabilities;
+
+	import com.google.common.collect.ImmutableMap;
+
+	import io.appium.java_client.android.AndroidDriver;
+	import io.appium.java_client.remote.MobileCapabilityType;
+	import io.appium.java_client.remote.MobilePlatform;
+	
+	public class chrome {
+		
+	   
+		public static   <MobileElement> void capabilities()  throws MalformedURLException {
+
+			 WebDriver Driver;
+			 
+
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,MobilePlatform.ANDROID);
+			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel22");
+			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
+			capabilities.setCapability("chromeOption",ImmutableMap.of("w3c",false));
+			AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub/"),capabilities);
+			
+			driver.get("www.appwrk.com");
+		}
+		}
+	

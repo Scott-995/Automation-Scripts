@@ -1,0 +1,9 @@
+package basicweb;
+
+public class sum {
+	 public static void main (String[] args) {
+		int [] marks = {99,98,97};
+		int[][] finalmarks = {{ 99, 98, 97},{94, 95, 96}};
+		System.out.println(finalmarks[1][0]);
+	 }
+}

@@ -1,0 +1,14 @@
+package basicweb;
+
+public class sum {
+	 public static void main (String[] args) {
+		 int a =78;
+		 int b =4;
+		int c = 123456789;
+		long d = 12345678900L;
+		float e= 3.1F;
+		char f ='@';
+ boolean g = false;
+		
+	 }
+}

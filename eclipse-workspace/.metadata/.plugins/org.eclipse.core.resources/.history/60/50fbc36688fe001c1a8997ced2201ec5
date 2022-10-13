@@ -1,0 +1,52 @@
+package android;
+
+
+
+	import org.testng.annotations.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+	import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+
+import java.net.URL;
+
+	import java.util.concurrent.TimeUnit;
+
+	public class scrolldown {
+  AndroidDriver driver;
+@Test
+public void scroll() {
+ try {
+DesiredCapabilities caps = new DesiredCapabilities();
+
+caps.setCapability("deviceName", "Google pixel 4"); //Give your device/emulator name
+
+ caps.setCapability("udid", "emulator-5554"); // Go to adb location i.e.    C:\Users\singe\AppData\Local\Android\Sdk\platform-tools in command prompt and execute ‘adb devices’ to get udid
+
+caps.setCapability("platformVersion", "9.0"); //Give android version of your device. (Check ‘about phone’ section)
+
+	  caps.setCapability("appPackage", "com.hmh.api"); //provide app package name. Apkinfo can be used or execute dumpsys window windows | grep -E ‘mCurrentFocus’ command in adb shell in cmd in C:\Users\singe\AppData\Local\Android\Sdk\platform-tools
+
+ caps.setCapability("appActivity", "com.hmh.api.ApiDemos");
+
+ AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps); //Create driver object
+ driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //Implicit wait of 10 seconds
+	driver.findElement(By.xpath("//android.widget.Button[@index='1']")).click();
+ // driver.findElement(By.xpath("//android.widget.TextView[@index='10']"));
+ // WebDriver driver =  = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+ /// ((AndroidDriver) driver).findElementByAndroidUIAutomator("new UiScrollable(new    UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"WebView\").instance(0))").click(); //scroll down to the element and click
+//).click();
+
+	//  Thread.sleep(10000); //wait of 10 seconds
+// driver.quit(); //closes the driver session
+//} catch (Exception e) {
+
+	 // e.printStackTrace();
+
+	    }}
+
+
+	     
+
+	

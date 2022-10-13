@@ -1,0 +1,26 @@
+package basicweb;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class GoogleSeaarchPageObjects {
+	WebDriver driver = new ChromeDriver();		
+	public static void main(String[] args) {
+
+		By textBoxsearch = By.name("q");
+		By button_search = By.name("btnK");
+		
+		public GoogleSeaarchPageObjects(WebDriver driver) {
+			this.driver=driver;}
+		
+			public void setTextInSearchBox(String text) {
+				driver.findElement("textBoxsearch").sendKeys(text);
+				
+
+			}
+
+	}
+	}
+
+}

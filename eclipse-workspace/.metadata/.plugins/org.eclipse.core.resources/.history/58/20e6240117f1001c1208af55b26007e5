@@ -1,0 +1,33 @@
+package basicweb;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Broken12 {
+
+	public static void checkLinks(String linkURL) {
+		try
+		{
+			 URL url = new URL(linkURL);
+			 HttpURLConnection httpurlConnection = (HttpURLConnection) url.openConnection();
+			                   httpurlConnection.setConnectTimeout(5000);
+			                   httpurlConnection.connect();
+			 if(httpurlConnection.getResponseCode()==200)
+			 {
+				 System.out.println(linkURL+"--"+ httpurlConnection.getResponseMessage());
+
+			 }
+			 }
+				 
+	}
+			 
+		}        
+	
+
+	

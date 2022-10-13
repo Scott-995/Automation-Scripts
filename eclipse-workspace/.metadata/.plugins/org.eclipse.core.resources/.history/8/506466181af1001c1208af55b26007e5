@@ -1,0 +1,59 @@
+package basicweb;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Iterator;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+
+public class Broken12 {
+	
+
+	
+	    WebDriver driver;
+	    String webPage;
+	    public Broken12(WebDriver driver, String webPage) {
+	        this.driver = driver;
+	        this.webPage = webPage;
+	    }
+	    @SuppressWarnings("unused")
+		public void giveMeAllTheBrokenLinks(){
+	        String url = "http://dev.appwrk.com";
+	        HttpURLConnection huc = null;
+	        int respCode = 200;
+
+	        driver.get(webPage);
+
+	        List<WebElement> links = driver.findElements(By.tagName("a"));
+
+	        Iterator<WebElement> it = links.iterator();
+
+	        while(it.hasNext()){
+
+	            WebElement we = it.next();
+	            url = we.getAttribute("href");
+
+	            if(url == null || url.isEmpty()){
+
+	                System.out.println("URL is either not configured for anchor tag or it is empty");
+	                continue;
+	            }
+	        }
+	            try
+	            {
+	                huc = (HttpURLConnection)(new URL(url).openConnection());
+                        
+	                huc.setRequestMethod("HEAD");
+	                
+	            }
+	        
+	         catch (Exception e) {
+	        }	
+	        }
+	    } 
+	
+	     

@@ -1,0 +1,42 @@
+package android;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import com.google.common.collect.ImmutableMap;
+
+import graphql.execution.nextgen.Common;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.remote.MobilePlatform;
+
+public class startChrome {
+    WebDriver Driver;
+	public static   void main(String[] args)     throws MalformedURLException, InterruptedException {
+
+
+
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel10");
+		//capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"Chrome");
+		 capabilities.setCapability("appPackage", "com.android.chrome");
+	        capabilities.setCapability("appActivity", "com.google.android.apps.chrome.Main");
+	        capabilities.setCapability("noReset", "true");
+	        
+	 
+	     //   URL url = new URL(get.getProperty("URL"));
+		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub/"),capabilities);
+		Thread.sleep(3000);
+		driver.findElement(By.id("search_box_text")).sendKeys("amazon");
+	 //  driver.get("http://www.amazon.com");
+      
+	
+	}
+
+}

@@ -1,0 +1,34 @@
+package basicweb;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class ErrorValidation {
+
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Appwrk-22\\eclipse-workspace\\Start\\drivers\\chromedriver\\chromedriver.exe");
+
+		WebDriver driver = new ChromeDriver(); 
+		driver.get("http://dev.appwrk.com");
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.name("subscribe")).click();
+		
+		driver.findElement(By.name("MERGE0")).sendKeys("A");
+		driver.findElement(By.name("submit")).click();
+		
+
+		String Actual_error= driver.findElement(By.xpath("//*[@id=\"MERGE0\"]")).getText();
+		String Expected_error= "The URL is invalid."; 
+		//type1
+		Assert.assertEquals(Actual_error, Expected_error);
+//type2 
+		Assert.assertTrue(Actual_error.contains("The URL is invalid.")); 
+	}
+
+}

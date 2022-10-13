@@ -1,0 +1,9 @@
+package basicweb;
+
+public class sum {
+	 public static void main (String[] args) {
+		 String a = "Aman";
+	   String b = a.replace('m', 'c');
+			   System.out.println(b);
+	 }
+}

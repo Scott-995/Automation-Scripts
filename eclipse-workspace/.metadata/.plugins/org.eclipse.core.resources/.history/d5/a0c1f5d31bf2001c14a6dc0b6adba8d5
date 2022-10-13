@@ -1,0 +1,27 @@
+package basicweb;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class ErrorValidation {
+
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Appwrk-22\\eclipse-workspace\\Start\\drivers\\chromedriver\\chromedriver.exe");
+
+		WebDriver driver = new ChromeDriver(); 
+		driver.get("https://dev.appwrk.com/contact-us");
+		driver.manage().window().maximize();
+	String first= driver.findElement(By.name("Yourname")).sendKeys("qw");
+	String firstText = first.getText();
+	System.out.println("the first error is "+ firstText);
+
+	driver.findElement(By.xpath("//*[@id=\"wpcf7-f426-o2\"]/form/div[2]/div/div[1]/div[6]/input")).click();
+	}			
+	}
+
+

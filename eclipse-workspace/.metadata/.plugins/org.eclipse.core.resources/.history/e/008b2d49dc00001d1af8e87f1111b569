@@ -1,0 +1,11 @@
+package basicweb;
+
+public class sum {
+	 public static void main (String[] args) {
+		 String a = "Aman";
+		 String b = "Sushant";
+		 String c = a +" And "+ b ;
+	
+		 System.out.println(c.length());
+	 }
+}

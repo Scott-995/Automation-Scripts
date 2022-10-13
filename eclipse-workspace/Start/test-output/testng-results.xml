@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-10-13T12:57:26 IST" name="Default suite" finished-at="2022-10-13T12:57:26 IST" duration-ms="90">
+    <groups>
+    </groups>
+    <test started-at="2022-10-13T12:57:26 IST" name="Default test" finished-at="2022-10-13T12:57:26 IST" duration-ms="90">
+      <class name="basicweb.testng1">
+        <test-method is-config="true" signature="Login()[pri:0, instance:basicweb.testng1@37afeb11]" started-at="2022-10-13T12:57:26 IST" name="Login" finished-at="2022-10-13T12:57:26 IST" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method is-config="true" signature="ChromeBrower()[pri:0, instance:basicweb.testng1@37afeb11]" started-at="2022-10-13T12:57:26 IST" name="ChromeBrower" finished-at="2022-10-13T12:57:26 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChromeBrower -->
+        <test-method is-config="true" signature="getURL()[pri:0, instance:basicweb.testng1@37afeb11]" started-at="2022-10-13T12:57:26 IST" name="getURL" finished-at="2022-10-13T12:57:26 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getURL -->
+        <test-method signature="googleTitleTest()[pri:0, instance:basicweb.testng1@37afeb11]" started-at="2022-10-13T12:57:26 IST" name="googleTitleTest" finished-at="2022-10-13T12:57:26 IST" duration-ms="16" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleTitleTest -->
+        <test-method is-config="true" signature="deletecatches()[pri:0, instance:basicweb.testng1@37afeb11]" started-at="2022-10-13T12:57:26 IST" name="deletecatches" finished-at="2022-10-13T12:57:26 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deletecatches -->
+        <test-method is-config="true" signature="CloseBrowers()[pri:0, instance:basicweb.testng1@37afeb11]" started-at="2022-10-13T12:57:26 IST" name="CloseBrowers" finished-at="2022-10-13T12:57:26 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowers -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:basicweb.testng1@37afeb11]" started-at="2022-10-13T12:57:26 IST" name="logout" finished-at="2022-10-13T12:57:26 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="Generatereports()[pri:0, instance:basicweb.testng1@37afeb11]" started-at="2022-10-13T12:57:26 IST" name="Generatereports" finished-at="2022-10-13T12:57:26 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Generatereports -->
+      </class> <!-- basicweb.testng1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

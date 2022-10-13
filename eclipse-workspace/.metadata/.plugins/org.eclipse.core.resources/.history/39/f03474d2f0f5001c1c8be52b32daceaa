@@ -1,0 +1,31 @@
+package basicweb;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class multiwindow {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		WebDriver driver = new ChromeDriver(); 
+		driver.get("https://rahulshettyacademy.com/angularpractice");
+		driver.switchTo().newWindow(WindowType.TAB);
+		Set <String> handles = driver.getWindowHandles();
+		Iterator <String> it=handles.iterator();
+		String parentWindowID = it.next();
+		String childWindow=it.next();
+        driver.switchTo().window(childWindow);
+        driver.get("https://rahulshettyacademy.com");
+        String Coursename =  driver.findElement(By.cssSelector("a[herf*='https://courses.rahulshettyacademy.com/p']")).getText();
+        driver.switchTo().window(parentWindowID);
+        driver.findElement(By.cssSelector("[name='name']")).sendKeys(Coursename);
+       Thread.sleep(4000);
+     driver.quit();
+	}
+
+}

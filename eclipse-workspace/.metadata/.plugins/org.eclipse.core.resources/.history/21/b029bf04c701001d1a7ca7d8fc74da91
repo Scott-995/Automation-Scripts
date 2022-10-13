@@ -1,0 +1,73 @@
+package basicweb;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class checktextboxinput {
+
+	 public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Appwrk-22\\eclipse-workspace\\Start\\drivers\\chromedriver\\chromedriver.exe");
+
+				WebDriver driver =new ChromeDriver();
+				driver.get("https://dev.appwrk.com/contact-us");
+				Thread.sleep(6000);
+
+				driver.manage().window().maximize();
+
+
+
+				
+	           WebElement name = driver.findElement(By.name("Yourname"));
+	           name.sendKeys("pooll"); 
+	           String n = name.getText();
+	           System.out.println(n);
+	           
+	         
+	       
+	          
+	            WebElement dname  = driver.findElement(By.name("Phonenumber-cf7it-national"));
+	            dname.sendKeys("124532657898");
+	            String p = name.getText();
+		           System.out.println(p);
+		           
+	         
+	            
+	            WebElement cname = driver.findElement(By.name("email"));
+	            cname.sendKeys("qwerty@gmail.com");
+	            String q = name.getText();
+		           System.out.println(q);
+		           
+	          // System.out.println(cname.getText());
+	            
+	            WebElement Button = driver.findElement(By.xpath("//input[@value='Submit']"));
+	            Button.click();
+	            System.out.println(Button.getRect().getDimension().getHeight());
+	            System.out.println(Button.getRect().getDimension().getWidth());
+	      //      System.out.println(Button.getText());
+	            Thread.sleep(5000);
+	            
+	            WebElement AButton = driver.findElement(By.xpath("//*[@id=\"button-quote\"]"));
+	            AButton.click();
+	            
+	            Thread.sleep(5000);
+	            
+	            //get height and width 
+	            //System.out.println(name.getRect().getDimension().getHeight());
+	            //System.out.println(name.getRect().getDimension().getWidth());
+	            
+	            
+	     
+					
+
+	
+
+
+	
+
+		
+	}
+
+}

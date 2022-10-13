@@ -1,0 +1,36 @@
+package basicweb;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DatepickerDemo {
+
+	public static void main(String[] args) {
+		WebDriver driver = new ChromeDriver();
+
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.get("https://www.booking.com/");
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/form/div[1]/div[2]/div[1]/div[2]/div/div/div/div/span")).click();
+		String checkInMonth = "JULY 2022";
+		String DateVal = "29";
+		while(true){
+			String month =	driver.findElement(By.xpath("bui-calendar__month")).getText();
+			if(month.equals(checkInMonth)){
+
+				break;
+
+			}
+			else {
+
+				driver.findElement(By.xpath("")).click();
+
+			}
+		}
+
+
+
+	}
+
+}

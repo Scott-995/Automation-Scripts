@@ -1,0 +1,9 @@
+
+public class fb2 {
+
+	public void main () {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Appwrk-22\\eclipse-workspace\\Start\\drivers\\chromedriver\\chromedriver.exe");
+
+	}
+}

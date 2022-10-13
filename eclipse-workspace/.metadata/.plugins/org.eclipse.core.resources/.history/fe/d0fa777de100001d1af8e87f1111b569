@@ -1,0 +1,10 @@
+package basicweb;
+
+public class sum {
+	 public static void main (String[] args) {
+		 String a = "Aman";
+	   String b = a.replace('A', 'c');
+			   System.out.println(b);
+			   System.out.println(a);
+	 }
+}

@@ -1,0 +1,19 @@
+package android;
+
+import java.net.MalformedURLException;
+
+import org.openqa.selenium.By;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class baseChrome2 extends baseChrome1 {
+       
+	public static  <AndroidElement> void main (String[] args) throws MalformedURLException {
+	
+		AndroidDriver driver = capabilities(); 
+		driver.get("https://rahulshettyacademy.com/angularAppdemo/");
+		driver.findElement(By.cssSelector("navbar-toggler-icon"));
+		driver.findElement(By.cssSelector("a[herf*='products']")).click();
+	
+	}
+}

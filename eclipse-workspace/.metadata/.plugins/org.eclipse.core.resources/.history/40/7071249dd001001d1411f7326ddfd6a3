@@ -1,0 +1,71 @@
+package basicweb;
+
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class checktextboxinput {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Appwrk-22\\eclipse-workspace\\Start\\drivers\\chromedriver\\chromedriver.exe");
+
+		WebDriver driver =new ChromeDriver();
+		driver.get("https://dev.appwrk.com/contact-us");
+		Thread.sleep(4000);
+
+		driver.manage().window().maximize();
+
+
+		//  WebElement name = driver.findElement(By.name("Yourname"));
+		//	Scanner sc=new Scanner(System.in); 
+		WebElement name = driver.findElement(By.name("Yourname"));
+		name.sendKeys("pool");
+		String n = name.getAttribute("value");
+		System.out.println(n);
+		System.out.println(name.getRect().getDimension().getHeight());
+		System.out.println(name.getRect().getDimension().getWidth()); 
+
+		WebElement dname  = driver.findElement(By.name("Phonenumber-cf7it-national"));
+		dname.sendKeys("124532657898");
+		String d = dname.getAttribute("value");
+		System.out.println(d);
+
+		WebElement cname = driver.findElement(By.name("email"));
+		cname.sendKeys("qwerty@gmail.com");
+		String c = cname.getAttribute("value");
+		System.out.println(c);		           
+
+
+		WebElement Button = driver.findElement(By.xpath("//input[@value='Submit']"));
+		Button.click();
+
+
+		Thread.sleep(5000);
+
+		//WebElement AButton = driver.findElement(By.xpath("//*[@id=\"button-quote\"]"));
+		//AButton.click();
+        driver.findElement(By.xpath("/html/body/footer/div[4]/div/p/a"));
+    	Thread.sleep(5000);
+
+		driver.close();
+
+		//get height and width 
+		//System.out.println(name.getRect().getDimension().getHeight());
+		//System.out.println(name.getRect().getDimension().getWidth());
+
+
+
+
+
+
+
+
+
+
+
+	}
+
+}

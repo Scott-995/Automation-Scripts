@@ -1,0 +1,62 @@
+package basicweb;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BrokenLinks1 {
+
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) throws InterruptedException, IOException {
+
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Appwrk-22\\eclipse-workspace\\Start\\drivers\\chromedriver\\chromedriver.exe");
+
+		WebDriver driver =new ChromeDriver();
+		driver.get("https:dev.appwrk.com");
+		driver.manage().window().maximize();
+        driver.get("");
+		Thread.sleep(4000);
+		List<WebElement> links= (List<WebElement>) driver.findElement(By.tagName("a"));
+		System.out.println("All links: " + links.size());
+		//extract the url
+		Set<String> s =new HashSet<>();
+		int noOfBrokenLinks = 0 ;
+		for (WebElement e : links ){
+			String link = e.getAttribute("href");
+			if(link !=null &&! (link.isEmpty())) {
+              s.add(link);				
+			}
+		}
+		System.out.println(s.size());
+		// link open or not 
+		HttpURLConnection connection ;
+		connection =(HttpURLConnection) new URL("").openConnection();
+		connection.connect();
+		int Code = connection.getResponseCode();
+		 if (Code>=400)
+		 {
+			 noOfBrokenLinks++;
+			 String url = null;
+			System.out.println("Broken Link :"+ url);
+		 }
+		
+	
+	}
+	//System.out.println("Number of Broken Links :"+ noOFBrokenLinks);
+
+	//catch (Exception e) {
+	//e.printStackTrace();
+	//}
+              
+	}
+	
+	
+
